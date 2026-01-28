@@ -1,10 +1,11 @@
 'use client';
-import Button from './Button';
 
+import Button from './Button';
+import SectionContainer from './SectionContainer';
 
 const Hero = () => (
-  <section className="py-10 lg:py-16">
-    <div className="container mx-auto px-4 lg:px-8">
+  <SectionContainer>
+    <section className="py-10 lg:py-16">
       <div
         className="relative min-h-[60vh] flex items-center justify-start bg-cover bg-center rounded-2xl overflow-hidden"
         style={{
@@ -18,20 +19,27 @@ const Hero = () => (
             Empowering Your Business with Expert Accounting
           </h1>
           <p className="text-lg text-blue-100 mb-8 leading-relaxed max-w-xl">
-            Personalized tax, audit, and consulting services for ambitious businesses. Grow with confidence—let us handle the numbers while you focus on success.
+            Personalized tax, audit, and consulting services for ambitious businesses. Grow with confidenceet us handle the numbers while you focus on success.
           </p>
           <div className="flex flex-row gap-4">
-            <Button href="/contact" className="px-8 py-3.5 bg-primary-500 text-white">
-              Contact us
-            </Button>
-            <Button href="/services" className="px-8 py-3.5 bg-white text-neutral-800 border border-neutral-300">
-              Browse all services
-            </Button>
-          </div>
+  <Button
+    href="/contact"
+    label="Contact us"
+    bgColor="bg-primary-500"
+    textColor="text-white"
+  />
+  <Button
+    href="/services"
+    label="Browse all services"
+    bgColor="bg-white"
+    textColor="text-neutral-800"
+    className="border border-neutral-300"
+  />
+</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </SectionContainer>
 );
 
 export default Hero;

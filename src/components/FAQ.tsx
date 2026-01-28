@@ -1,19 +1,21 @@
 
+
 import React from "react";
 import Button from "./Button";
+import SectionContainer from './SectionContainer';
 
 const FAQ = () => (
-  <section className="py-20 lg:py-28">
-    <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-      <div className="text-center mb-16">
+  <SectionContainer>
+    <section className="mb-12 lg:mb-20 bg-primary-100 rounded-2xl shadow-lg py-10 lg:py-16 px-4 lg:px-8">
+      <div className="text-center mb-8">
         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
           Frequently asked questions
         </h2>
-        <p className="text-gray-600 text-lg">
+        <p className="text-gray-600 text-lg max-w-xl mx-auto">
           Sed convallis tincidunt nunc magna tincidunt suscipit mattis massa nisl et adipiscing semper leo lorem urna lectus nunc integer duis.
         </p>
       </div>
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <details className="group bg-white border border-gray-200 rounded-lg">
           <summary className="flex justify-between items-center cursor-pointer p-6 font-semibold text-gray-900 text-lg">
             What specific services do you offer to help businesses?
@@ -60,12 +62,15 @@ const FAQ = () => (
         </details>
       </div>
       <div className="text-center mt-12">
-        <Button className="bg-primary-600 text-white px-8 py-3.5 rounded-md font-semibold">
-          Contact us
-        </Button>
-      </div>
-    </div>
-  </section>
+  <Button
+    href="/contact"
+    label="Contact us"
+    bgColor="bg-primary-500"
+    textColor="text-white"
+  />
+</div>
+    </section>
+  </SectionContainer>
 );
 
 export default FAQ;

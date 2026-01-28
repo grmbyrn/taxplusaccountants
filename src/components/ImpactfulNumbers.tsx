@@ -1,11 +1,9 @@
-
-import React from "react";
 import Button from "./Button";
-
+import SectionContainer from './SectionContainer';
 
 const ImpactfulNumbers = () => (
-  <section className="py-20 lg:py-28 relative overflow-visible">
-    <div className="container mx-auto px-4 lg:px-8">
+  <SectionContainer>
+    <section className="py-20 lg:py-28 relative overflow-visible">
       <div className="bg-[#1A2A4A] rounded-2xl px-6 md:px-12 py-12 flex flex-col lg:flex-row items-center lg:items-stretch relative overflow-visible">
         <div className="flex-1 flex flex-col justify-center lg:pr-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -15,10 +13,13 @@ const ImpactfulNumbers = () => (
             Sed convallis tincidunt nunc magna tincidunt suscipit mattis massa nisl et adipiscing semper.
           </p>
           <div className="flex justify-start w-full">
-            <Button className="bg-primary-500 text-white px-8 py-3.5 rounded-md font-semibold">
-              Contact us
-            </Button>
-          </div>
+  <Button
+    label="Contact us"
+    href="/contact"
+    bgColor="bg-primary-500"
+    textColor="text-white"
+  />
+</div>
           <div className="relative flex flex-col items-center justify-center mt-10 min-h-[120px]">
             <div className="flex flex-col lg:flex-row gap-8 w-full items-start">
               <div className="flex flex-col items-start text-left flex-1 min-w-[140px]">
@@ -37,8 +38,8 @@ const ImpactfulNumbers = () => (
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </SectionContainer>
 );
 
 export default ImpactfulNumbers;

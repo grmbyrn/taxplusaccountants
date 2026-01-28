@@ -1,18 +1,37 @@
-
-import React from "react";
+'use client';
 import Button from "./Button";
+import SectionContainer from './SectionContainer';
 
 const CTA = () => (
-  <section id="contact" className="bg-gradient-to-br from-blue-600 to-indigo-700 py-20 lg:py-28">
-    <div className="container mx-auto px-4 lg:px-8 text-center">
-      <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-        Your financial future is just a click away. Know us!
+  <SectionContainer>
+    <section
+      id="contact"
+      className="bg-gradient-to-br from-blue-900/90 to-indigo-900/80 py-16 lg:py-24 rounded-2xl text-center mb-12 lg:mb-20"
+    >
+      <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 max-w-2xl mx-auto leading-tight">
+        Take Control of Your Business Finances Today
       </h2>
-      <Button className="bg-white text-primary-600 px-8 py-3.5 rounded-md font-semibold text-lg">
-        Contact us
-      </Button>
-    </div>
-  </section>
+      <p className="text-lg text-blue-100 mb-8 max-w-xl mx-auto leading-relaxed">
+        Our team of experts will guide you through tax, audit, and consulting, so you can focus on growing your business with confidence.
+      </p>
+      <div className="flex flex-col sm:flex-row justify-center gap-4">
+  <Button
+    label="Get Started"
+    href="/contact"
+    bgColor="bg-primary-500"
+    textColor="text-white"
+    className=""
+  />
+  <Button
+    label="Learn More"
+    href="/services"
+    bgColor="bg-white border border-neutral-300"
+    textColor="text-neutral-800"
+    className=""
+  />
+</div>
+    </section>
+  </SectionContainer>
 );
 
 export default CTA;

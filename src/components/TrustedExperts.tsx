@@ -1,9 +1,11 @@
+
 import Image from 'next/image';
 import accountantsImage from '@/assets/accountants.jpg';
+import SectionContainer from './SectionContainer';
 
 const TrustedExperts = () => (
-  <section className="py-20 lg:py-28">
-    <div className="container mx-auto px-4 lg:px-8">
+  <SectionContainer>
+    <section className="py-20 lg:py-28">
       <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
         <div className="w-full lg:w-1/2 order-1 lg:order-1 flex justify-center">
           <Image
@@ -21,8 +23,8 @@ const TrustedExperts = () => (
           </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </SectionContainer>
 );
 
 export default TrustedExperts;

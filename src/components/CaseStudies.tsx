@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
+import SectionContainer from './SectionContainer';
 
 const testimonials = [
   {
@@ -14,12 +15,13 @@ const testimonials = [
   },
 ];
 
+
 const Testimonials = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="testimonials" className="py-20 lg:py-28 text-center">
-      <div className="container mx-auto px-4 lg:px-8">
+    <SectionContainer>
+      <section id="testimonials" className="py-20 lg:py-28 text-center">
         <div className="text-left mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-center">Testimonials</h2>
         </div>
@@ -30,7 +32,7 @@ const Testimonials = () => {
               {testimonials.map((t, idx) => (
                 <div key={idx} className="min-w-full px-2">
                   <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col h-full border border-gray-100">
-                    <p className="text-lg md:text-xl text-gray-800 mb-4 whitespace-pre-line">“{t.quote}”</p>
+                    <p className="text-lg md:text-xl text-gray-800 mb-4 whitespace-pre-line">{t.quote}</p>
                     <span className="font-semibold text-blue-700">{t.author}</span>
                   </div>
                 </div>
@@ -54,15 +56,15 @@ const Testimonials = () => {
             {testimonials.map((t, idx) => (
               <div key={idx} className="bg-white rounded-2xl shadow-lg p-8 flex-1 border border-gray-100 flex flex-col">
                 <div className="flex-1 flex flex-col">
-                  <p className="text-lg lg:text-xl text-gray-800 mb-4 whitespace-pre-line flex-1">“{t.quote}”</p>
+                  <p className="text-lg lg:text-xl text-gray-800 mb-4 whitespace-pre-line flex-1">{t.quote}</p>
                 </div>
                 <span className="font-semibold text-blue-700">{t.author}</span>
               </div>
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </SectionContainer>
   );
 };
 
