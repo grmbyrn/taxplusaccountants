@@ -18,10 +18,10 @@ const Testimonials = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="testimonials" className="py-20 lg:py-28">
+    <section id="testimonials" className="py-20 lg:py-28 text-center">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-left mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Testimonials</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-center">Testimonials</h2>
         </div>
         {/* Mobile carousel */}
         <div className="block md:hidden">
