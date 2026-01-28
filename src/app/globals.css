@@ -1,6 +1,39 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Consistent typography for headings and paragraphs */
+h1 {
+  @apply text-[100px] leading-[1.2em] font-extrabold;
+}
+h2 {
+  @apply text-[80px] leading-[1.125em] font-extrabold;
+}
+h3 {
+  @apply text-[66px] leading-[1.09em] font-extrabold;
+}
+h4 {
+  @apply text-[56px] leading-[1.071em] font-extrabold;
+}
+h5 {
+  @apply text-[48px] leading-[1em] font-extrabold;
+}
+h6 {
+  @apply text-[36px] leading-[1.112em] font-extrabold;
+}
+p.paragraph-large {
+  @apply text-[18px] leading-[1.667em] font-normal;
+}
+p.paragraph-medium {
+  @apply text-[16px] leading-[1.25em] font-normal;
+}
+p.paragraph-default {
+  @apply text-[14px] leading-[1.571em] font-normal;
+}
+p.paragraph-small {
+  @apply text-[12px] leading-[1.5em] font-normal;
+}
 
 :root {
   --background: #ffffff;
