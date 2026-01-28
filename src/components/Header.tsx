@@ -6,7 +6,7 @@ import React, { useState } from "react";
 const Header = () => {
   const [open, setOpen] = useState(false);
   return (
-    <header className="bg-white border-b border-neutral-200">
+    <header className="bg-white">
       <div className="container mx-auto px-4 lg:px-8 py-5">
         <nav className="flex items-center justify-between">
           <a href="/" className="text-2xl font-bold text-gray-900">Tax Plus Accountants</a>

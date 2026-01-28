@@ -14,7 +14,7 @@ const CTA = () => (
       <p className="text-lg text-blue-100 mb-8 max-w-xl mx-auto leading-relaxed">
         Our team of experts will guide you through tax, audit, and consulting, so you can focus on growing your business with confidence.
       </p>
-      <div className="flex flex-col sm:flex-row justify-center gap-4">
+      <div className="flex flex-row justify-center gap-4">
   <Button
     label="Get Started"
     href="/contact"

@@ -5,7 +5,7 @@ import TrustedExperts from "@/components/TrustedExperts";
 import AllInOneServices from "@/components/AllInOneServices";
 import BestOption from "@/components/BestOption";
 import ImpactfulNumbers from "@/components/ImpactfulNumbers";
-import CaseStudies from "@/components/CaseStudies";
+import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Blog from "@/components/Blog";
 import CTA from "@/components/CTA";
@@ -20,7 +20,7 @@ export default function Home() {
       <AllInOneServices />
       <BestOption />
       <ImpactfulNumbers />
-      <CaseStudies />
+      <Testimonials />
       <FAQ />
       {/* <Blog /> */}
       <CTA />
