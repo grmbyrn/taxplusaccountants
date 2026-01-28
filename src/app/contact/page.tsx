@@ -1,10 +1,8 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import CTA from "@/components/CTA";
 
 export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-20 lg:py-28">
@@ -197,19 +195,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-indigo-700 py-20 lg:py-28">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Your financial future is just a click away. Know us!
-          </h2>
-          <button className="bg-white text-blue-600 px-8 py-3.5 rounded-md font-semibold hover:bg-blue-50 transition text-lg">
-            Contact us
-          </button>
-        </div>
-      </section>
-
-      <Footer />
+      <CTA  />
     </div>
   );
 }
