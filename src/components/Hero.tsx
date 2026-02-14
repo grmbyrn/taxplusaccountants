@@ -1,45 +1,20 @@
-'use client';
+// import { Button } from './ui/button';
+// import heroImage from '@/assets/hero-accounting.jpg';
+// import Image from 'next/image';
 
-import Button from './Button';
-import SectionContainer from './SectionContainer';
-
-const Hero = () => (
-  <SectionContainer>
-    <section className="py-10 lg:py-16">
-      <div
-        className="relative min-h-[60vh] flex items-center justify-start bg-cover bg-center rounded-2xl overflow-hidden"
-        style={{
-          backgroundImage:
-            'url(https://images.unsplash.com/photo-1713947504870-681a2af15a1a?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 to-indigo-900/40 z-0 rounded-2xl" />
-        <div className="relative z-10 flex flex-col items-start justify-center min-h-[60vh] px-6 sm:px-8 py-10 animate-fadein">
-          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-2xl">
-            Empowering Your Business with Expert Accounting
-          </h1>
-          <p className="text-lg text-blue-100 mb-8 leading-relaxed max-w-xl">
-            Personalized tax, audit, and consulting services for ambitious businesses. Grow with confidenceet us handle the numbers while you focus on success.
-          </p>
-          <div className="flex flex-row gap-4">
-  <Button
-    href="/contact"
-    label="Contact us"
-    bgColor="bg-primary-500"
-    textColor="text-white"
-  />
-  <Button
-    href="/services"
-    label="Browse all services"
-    bgColor="bg-white"
-    textColor="text-neutral-800"
-    className="border border-neutral-300"
-  />
-</div>
+const Hero = () => {
+  return (
+    <section id="home" className="pt-12 pb-12">
+      <div className="container mx-auto text-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50/80 backdrop-blur-sm px-4 py-1.5 text-sm text-amber-600 mb-8 transition-all duration-700 opacity-100 translate-y-0"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="h-4 w-4" aria-hidden="true"><path d="M208,144a15.78,15.78,0,0,1-10.42,14.94L146,178l-19,51.62a15.92,15.92,0,0,1-29.88,0L78,178l-51.62-19a15.92,15.92,0,0,1,0-29.88L78,110l19-51.62a15.92,15.92,0,0,1,29.88,0L146,110l51.62,19A15.78,15.78,0,0,1,208,144ZM152,48h16V64a8,8,0,0,0,16,0V48h16a8,8,0,0,0,0-16H184V16a8,8,0,0,0-16,0V32H152a8,8,0,0,0,0,16Zm88,32h-8V72a8,8,0,0,0-16,0v8h-8a8,8,0,0,0,0,16h8v8a8,8,0,0,0,16,0V96h8a8,8,0,0,0,0-16Z"></path></svg>Business &amp; Accounting Consultancy</div>
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.08] transition-all duration-700 delay-100 opacity-100 translate-y-0">For the next generation<br />of <span className="text-amber-500">entrepreneurs</span></h1>
+        <p className="mt-6 text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed transition-all duration-700 delay-200 opacity-100 translate-y-0">Start, grow, and manage your business with expert guidance. From company formation to bookkeeping — we handle the numbers so you can build what matters.</p>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4 transition-all duration-700 delay-300 opacity-100 translate-y-0"><button data-slot="dialog-trigger" className="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-10 has-[&gt;svg]:px-4 bg-amber-500 hover:bg-amber-600 text-navy font-semibold px-8 py-6 text-base rounded-full shadow-lg shadow-amber-500/20" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_r_3b_" data-state="closed">Get Started Free<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="ml-2 h-4 w-4" aria-hidden="true"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg></button><a href="#services" data-slot="button" className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-10 has-[&gt;svg]:px-4 rounded-full px-8 py-6 text-base border-slate-300 text-slate-600 hover:bg-slate-50">Explore Services</a>
         </div>
       </div>
+      <dl className="mt-16 flex items-center justify-center gap-12 sm:gap-16 transition-all duration-700 delay-500 opacity-100 translate-y-0"><div className="text-center"><dd className="text-3xl sm:text-4xl font-bold text-slate-900">500+</dd><dt className="mt-1 text-sm text-slate-500">Businesses Served</dt></div><div className="text-center"><dd className="text-3xl sm:text-4xl font-bold text-slate-900">15+</dd><dt className="mt-1 text-sm text-slate-500">Years Experience</dt></div><div className="text-center"><dd className="text-3xl sm:text-4xl font-bold text-slate-900">100%</dd><dt className="mt-1 text-sm text-slate-500">Revenue Compliant</dt></div></dl>
     </section>
-  </SectionContainer>
-);
+  );
+};
 
 export default Hero;

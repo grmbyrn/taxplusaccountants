@@ -1,243 +1,76 @@
-import CTA from "@/components/CTA";
+'use client';
+import Image from 'next/image';
+import accountantsImage from '@/assets/accountants.jpg'; // Adjust path if needed
+import TeamSection from '@/components/TeamSection';
+import AboutOurCompany from '@/components/AboutOurCompany';
+import Carousel from '@/components/Carousel';
 
-export default function About() {
+const carouselItems = [
+  {
+    title: "Limited Companies",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, a facilisis enim leo nec urna.dfsfd"
+  },
+  {
+    title: "Partnerships",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur cursus, nisl erat aliquam erat, eu facilisis enim leo nec urna."
+  },
+  {
+    title: "Sole Traders",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt cursus, nisi nisl aliquam erat, eu facilisis enim leo nec urna."
+  },
+  {
+    title: "Start Ups",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod, urna eu tincidunt cursus, nisi nisl aliquam erat, eu facilisis enim leo nec urna."
+  }
+];
+
+const About = () => {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-20 lg:py-28">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                About our company
-              </h1>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore cillum dolore eu fugiat nulla pariatur.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl aspect-[4/3]"></div>
-            </div>
-          </div>
+    <section id="about" className="container mx-auto px-4 py-20">
+      {/* Heading and intro */}
+      <AboutOurCompany />
+      {/* Mission section */}
+      <div className="mt-8 grid md:grid-cols-2 gap-0 items-stretch">
+        {/* Image on left (desktop), below text (mobile) */}
+        <div className="order-2 md:order-1 flex items-center justify-center rounded-b-2xl md:rounded-l-2xl md:rounded-bl-none overflow-hidden">
+          <Image
+            src={accountantsImage}
+            alt="Accountants team"
+            width={600}
+            height={400}
+            className="rounded-2xl object-cover w-full h-full"
+            priority
+          />
         </div>
-      </section>
-
-      {/* Story Section */}
-      <section className="py-20 lg:py-28">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                The story behind how our company was founded
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">10K</div>
-                  <div className="text-gray-600">Happy clients</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
-                  <div className="text-gray-600">Team members</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">97%</div>
-                  <div className="text-gray-600">Customer satisfaction</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">15Y</div>
-                  <div className="text-gray-600">Years of experience</div>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl aspect-[4/3]"></div>
-            </div>
+        {/* Text on right (desktop), above image (mobile) */}
+        <div className="order-1 md:order-2 flex flex-col justify-center py-10">
+          <div className="border-l-4 border-primary pl-6 mb-4">
+            <h3 className="text-4xl lg:text-5xl font-bold text-foreground mb-2">
+              Our mission
+            </h3>
           </div>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className="bg-gray-50 py-20 lg:py-28">
-        <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">
-            Our mission
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Lorem ipsum dolor sit amet consectetur. Iaculis orci sed ac et ac nunc vivamus orci quis sagittis cursus commodo quam nibh ante et vel nulla cras.
-          </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+          <p className="text-lg text-muted-foreground">
+            We believe that every business deserves professional financial guidance, regardless of size. From sole proprietors to growing corporations, we provide personalized solutions that drive growth and ensure compliance.
           </p>
         </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 lg:py-28">
-        <div className="container mx-auto px-4 lg:px-8">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-16 text-center">
-            Meet the amazing team behind Accountant
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {/* Team Member 1 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl aspect-[3/4] mb-6"></div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">Jeremy Matthews</h3>
-              <p className="text-gray-600 mb-4">CEO & Founder</p>
-              <div className="flex gap-3">
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            {/* Team Member 2 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl aspect-[3/4] mb-6"></div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">Sophie Moore</h3>
-              <p className="text-gray-600 mb-4">Accounting manager</p>
-              <div className="flex gap-3">
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            {/* Team Member 3 */}
-            <div className="group">
-              <div className="bg-gradient-to-br from-green-100 to-teal-100 rounded-2xl aspect-[3/4] mb-6"></div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">John Carter</h3>
-              <p className="text-gray-600 mb-4">Accounting manager</p>
-              <div className="flex gap-3">
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="text-center space-y-4">
-            <div className="flex gap-4 justify-center">
-              <button className="bg-blue-600 text-white px-8 py-3.5 rounded-md font-semibold hover:bg-blue-700 transition">
-                Contact us
-              </button>
-              <button className="bg-white text-gray-900 px-8 py-3.5 rounded-md font-semibold border-2 border-gray-200 hover:border-gray-300 transition">
-                Join our team
-              </button>
-            </div>
-          </div>
+      </div>
+      {/* Section above carousel */}
+      <div className="mt-16 mb-8">
+        <div className="border-l-4 border-primary pl-6 mb-4">
+          <h3 className="text-4xl lg:text-5xl font-bold text-foreground mb-2">
+            Types of businesses we help
+          </h3>
         </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="bg-gray-50 py-20 lg:py-28">
-        <div className="container mx-auto px-4 lg:px-8">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-16 text-center">
-            The values that shape everything we do at Accountant
-          </h2>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl aspect-[4/3]"></div>
-            </div>
-            <div className="space-y-8">
-              <div className="relative">
-                <div className="absolute -left-4 top-0 text-6xl font-bold text-gray-200">01</div>
-                <div className="pl-16">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Execution</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Consesctetur fames luctus adipiscing sapien amet tortor gravida in amet auctor tortor commodo vehicula eu porttitor.
-                  </p>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="absolute -left-4 top-0 text-6xl font-bold text-gray-200">02</div>
-                <div className="pl-16">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Results Matter</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur aliquip ex ea commodo.
-                  </p>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="absolute -left-4 top-0 text-6xl font-bold text-gray-200">03</div>
-                <div className="pl-16">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Ownership</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Ipsum dolor sit amet consectetur nascetur nibh ultrices bibendum morbi tellus odio faucibus morbi egestas.
-                  </p>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="absolute -left-4 top-0 text-6xl font-bold text-gray-200">04</div>
-                <div className="pl-16">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Growth</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    A eu elit mi aliquam ac utdlia non mattis egestas vulputate tellus condimentum massa odio posuere facilisi ut risus eget.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="text-center mt-12">
-            <button className="bg-blue-600 text-white px-8 py-3.5 rounded-md font-semibold hover:bg-blue-700 transition">
-              Contact us
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-        <CTA />
-    </div>
+        <p className="text-lg text-muted-foreground">
+          TaxPlus Accountants helps SMEs, including small Limited Companies, sole traders and partnerships, that provide a service or trade to maximise their accounts.
+        </p>
+      </div>
+      {/* Carousel section */}
+      <Carousel items={carouselItems} />
+      {/* Team section */}
+      <TeamSection />
+    </section>
   );
-}
+};
+
+export default About;

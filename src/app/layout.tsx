@@ -1,23 +1,23 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import type { Metadata } from 'next';
+import '../app/globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: "Tax Plus Accountants",
-  description: "Professional accounting services for your business",
+  title: 'Taxplus Accountants',
+  description: 'Your trusted partner for accounting solutions in Drogheda.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body className="font-sans bg-background text-gray-800">
         <Header />
-        {children}
+        <main>
+          <div className="max-w-7xl mx-auto px-4">
+            {children}
+          </div>
+        </main>
         <Footer />
       </body>
     </html>
