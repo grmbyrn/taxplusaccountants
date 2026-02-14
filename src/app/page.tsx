@@ -1,25 +1,22 @@
-import Hero from "@/components/Hero";
-import TrustedExperts from "@/components/TrustedExperts";
-import AllInOneServices from "@/components/AllInOneServices";
-import BestOption from "@/components/BestOption";
-import ImpactfulNumbers from "@/components/ImpactfulNumbers";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import Blog from "@/components/Blog";
-import CTA from "@/components/CTA";
+'use client'
+import Hero from '@/components/Hero';
+import Accreditations from '@/components/Accreditations';
+import Services from '@/components/Services';
+import FAQ from '@/components/FAQ';
+import HowItWorks from '@/components/HowItWorks';
+import Contact from '@/components/Contact';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <main>
       <Hero />
-      <TrustedExperts />
-      <AllInOneServices />
-      <BestOption />
-      <ImpactfulNumbers />
+      <Accreditations />
+      <Services />
+      <HowItWorks />
       <Testimonials />
       <FAQ />
-      {/* <Blog /> */}
-      <CTA />
-    </div>
+      <Contact />
+    </main>
   );
 }
