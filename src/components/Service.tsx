@@ -17,11 +17,16 @@ const Service = ({ image, alt, link, service }: ServiceProps) => {
         width={384}
         height={180}
         className="rounded-2xl mb-4 w-full"
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: "cover" }}
       />
       <div className="flex items-center justify-between w-full">
-        <span className="text-lg font-semibold text-white group-hover:underline">{service}</span>
-        <ArrowUpRight className="text-white group-hover:text-blue-200" size={22} />
+        <span className="text-lg font-semibold text-white group-hover:underline">
+          {service}
+        </span>
+        <ArrowUpRight
+          className="text-white group-hover:text-blue-200"
+          size={22}
+        />
       </div>
     </a>
   );

@@ -1,8 +1,8 @@
-'use client';
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
 const ReceiveCallCard = () => {
-  const [form, setForm] = useState({ name: '', email: '', phone: '' });
+  const [form, setForm] = useState({ name: "", email: "", phone: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -10,7 +10,7 @@ const ReceiveCallCard = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Receive call form submitted', form);
+    console.log("Receive call form submitted", form);
     setSubmitted(true);
   };
 
@@ -31,7 +31,8 @@ const ReceiveCallCard = () => {
       </div>
 
       <p className="text-sm text-muted-foreground mt-3 mb-4">
-        Volutpat lacus amet non at orci velit massa tellus suspendisse ut ultrices.
+        Volutpat lacus amet non at orci velit massa tellus suspendisse ut
+        ultrices.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-3">
@@ -79,10 +80,14 @@ const ReceiveCallCard = () => {
           className="w-full bg-primary text-white font-semibold py-2 rounded-xl disabled:opacity-60"
           disabled={submitted}
         >
-          {submitted ? 'Submitted' : 'Contact Us'}
+          {submitted ? "Submitted" : "Contact Us"}
         </button>
 
-        {submitted && <p className="text-sm text-green-600 mt-2">Thanks — we will contact you soon.</p>}
+        {submitted && (
+          <p className="text-sm text-green-600 mt-2">
+            Thanks — we will contact you soon.
+          </p>
+        )}
       </form>
     </div>
   );

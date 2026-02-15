@@ -1,19 +1,22 @@
 const articles = [
   {
     title: "How to Prepare for Tax Season: Essential Tips",
-    summary: "Get ready for tax season with these essential tips for businesses and individuals. Learn how to organize your documents and maximize your deductions.",
-    date: "September 20, 2025"
+    summary:
+      "Get ready for tax season with these essential tips for businesses and individuals. Learn how to organize your documents and maximize your deductions.",
+    date: "September 20, 2025",
   },
   {
     title: "The Importance of Financial Planning for Small Businesses",
-    summary: "Discover why financial planning is crucial for small businesses and how it can help you achieve long-term success.",
-    date: "September 12, 2025"
+    summary:
+      "Discover why financial planning is crucial for small businesses and how it can help you achieve long-term success.",
+    date: "September 12, 2025",
   },
   {
     title: "Top 5 Accounting Mistakes and How to Avoid Them",
-    summary: "Avoid common accounting mistakes with our expert advice. Learn what to watch out for and how to keep your books accurate.",
-    date: "September 5, 2025"
-  }
+    summary:
+      "Avoid common accounting mistakes with our expert advice. Learn what to watch out for and how to keep your books accurate.",
+    date: "September 5, 2025",
+  },
 ];
 
 const LatestArticles = () => (
@@ -24,9 +27,14 @@ const LatestArticles = () => (
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
         {articles.map((article, idx) => (
-          <div key={idx} className="bg-white rounded-xl shadow p-6 flex flex-col justify-between">
+          <div
+            key={idx}
+            className="bg-white rounded-xl shadow p-6 flex flex-col justify-between"
+          >
             <div>
-              <span className="block text-sm text-muted-foreground mb-2">{article.date}</span>
+              <span className="block text-sm text-muted-foreground mb-2">
+                {article.date}
+              </span>
               <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
               <p className="text-muted-foreground mb-4">{article.summary}</p>
             </div>

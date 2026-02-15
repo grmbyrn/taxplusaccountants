@@ -1,74 +1,73 @@
-'use client';
-import Image from 'next/image';
-import accountantsImage from '@/assets/accountants.jpg'; // Adjust path if needed
-import TeamSection from '@/components/TeamSection';
-import AboutOurCompany from '@/components/AboutOurCompany';
-import Carousel from '@/components/Carousel';
-
-const carouselItems = [
-  {
-    title: "Limited Companies",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, a facilisis enim leo nec urna.dfsfd"
-  },
-  {
-    title: "Partnerships",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur cursus, nisl erat aliquam erat, eu facilisis enim leo nec urna."
-  },
-  {
-    title: "Sole Traders",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod, urna eu tincidunt cursus, nisi nisl aliquam erat, eu facilisis enim leo nec urna."
-  },
-  {
-    title: "Start Ups",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris euismod, urna eu tincidunt cursus, nisi nisl aliquam erat, eu facilisis enim leo nec urna."
-  }
-];
+"use client";
+import Image from "next/image";
 
 const About = () => {
   return (
-    <section id="about" className="container mx-auto px-4 py-20">
-      {/* Heading and intro */}
-      <AboutOurCompany />
-      {/* Mission section */}
-      <div className="mt-8 grid md:grid-cols-2 gap-0 items-stretch">
-        {/* Image on left (desktop), below text (mobile) */}
-        <div className="order-2 md:order-1 flex items-center justify-center rounded-b-2xl md:rounded-l-2xl md:rounded-bl-none overflow-hidden">
+    <section id="about" className="max-w-6xl mx-auto px-4 py-20">
+      <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16">
+        {/* Text content */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center order-2 md:order-1">
+          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 text-left">
+            About <span className="text-amber-500">TaxPlus Accountants</span>
+          </h1>
+          <p className="text-lg sm:text-xl md:text-xl lg:text-2xl text-slate-700 mb-8 text-left">
+            We offer expert business advice and support, delivered by friendly
+            local teams as part of a dynamic national network. We can do more
+            for you.
+          </p>
+          {/* Optional: Add a call-to-action or arrow here if needed */}
+        </div>
+        {/* Image */}
+        <div className="w-full md:w-1/2 flex justify-center order-1 md:order-2 mb-8 md:mb-0">
           <Image
-            src={accountantsImage}
-            alt="Accountants team"
-            width={600}
-            height={400}
-            className="rounded-2xl object-cover w-full h-full"
+            width={908}
+            height={648}
+            className="rounded-2xl w-full h-auto max-w-[500px] md:min-w-[380px] md:max-w-[420px] shadow-lg"
+            alt="About Us"
+            src="https://taxassistassets.ams3.cdn.digitaloceanspaces.com/client/2020/PageMenuDefault.jpg"
             priority
           />
         </div>
-        {/* Text on right (desktop), above image (mobile) */}
-        <div className="order-1 md:order-2 flex flex-col justify-center py-10">
-          <div className="border-l-4 border-primary pl-6 mb-4">
-            <h3 className="text-4xl lg:text-5xl font-bold text-foreground mb-2">
-              Our mission
-            </h3>
-          </div>
-          <p className="text-lg text-muted-foreground">
-            We believe that every business deserves professional financial guidance, regardless of size. From sole proprietors to growing corporations, we provide personalized solutions that drive growth and ensure compliance.
-          </p>
-        </div>
       </div>
-      {/* Section above carousel */}
-      <div className="mt-16 mb-8">
-        <div className="border-l-4 border-primary pl-6 mb-4">
-          <h3 className="text-4xl lg:text-5xl font-bold text-foreground mb-2">
-            Types of businesses we help
-          </h3>
-        </div>
-        <p className="text-lg text-muted-foreground">
-          TaxPlus Accountants helps SMEs, including small Limited Companies, sole traders and partnerships, that provide a service or trade to maximise their accounts.
+      <div className="max-w-4xl md:max-w-5xl mx-auto py-8 px-4 sm:px-8">
+        <h2 className="text-2xl sm:text-3xl font-bold text-amber-600 mb-4 text-left">
+          Who We Are
+        </h2>
+        <p className="text-lg text-slate-800 mb-6 leading-relaxed">
+          I’m John Byrne, founder of TaxPlus Accountants. After 32 years working
+          with a major multinational company, gaining extensive experience in
+          budgeting, management accounts, payroll, auditing and financial
+          management, I established TaxPlus in 2015 with one clear goal: to help
+          small business owners take control of their finances.
+        </p>
+        <p className="text-lg text-slate-800 mb-6 leading-relaxed">
+          Over the years, I’ve seen how many businesses struggle not because
+          they lack ambition, but because they don’t have clarity around their
+          numbers. When you truly understand your accounts, you make better
+          decisions. Better decisions lead to stronger, more profitable
+          businesses.
+        </p>
+        <p className="text-lg text-slate-800 mb-6 leading-relaxed">
+          Since launching TaxPlus Accountants, we have supported hundreds of
+          SMEs and start-ups in organising their finances, improving their
+          financial visibility, and building sustainable growth.
+        </p>
+        <p className="text-lg text-slate-800 mb-6 leading-relaxed">
+          Together with my team, we provide practical, straightforward
+          accounting support tailored to your business. Whether you need
+          assistance with bookkeeping, payroll, taxation, or management accounts
+          — or you want us to manage your entire accounting function — we’re
+          here to help.
+        </p>
+        <p className="text-lg text-slate-800 mb-6 leading-relaxed">
+          Our aim is simple: to give you confidence in your numbers so you can
+          focus on running and growing your business.
+        </p>
+        <p className="text-lg text-slate-800 mb-6 leading-relaxed">
+          Let’s work together to maximise your accounts and strengthen your
+          business.
         </p>
       </div>
-      {/* Carousel section */}
-      <Carousel items={carouselItems} />
-      {/* Team section */}
-      <TeamSection />
     </section>
   );
 };

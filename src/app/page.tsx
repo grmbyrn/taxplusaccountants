@@ -1,11 +1,11 @@
-'use client'
-import Hero from '@/components/Hero';
-import Accreditations from '@/components/Accreditations';
-import Services from '@/components/Services';
-import FAQ from '@/components/FAQ';
-import HowItWorks from '@/components/HowItWorks';
-import Contact from '@/components/Contact';
-import Testimonials from '@/components/Testimonials';
+"use client";
+import Hero from "@/components/Hero";
+import Accreditations from "@/components/Accreditations";
+import Services from "@/components/Services";
+import FAQ from "@/components/FAQ";
+import HowItWorks from "@/components/HowItWorks";
+import Contact from "@/components/Contact";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (

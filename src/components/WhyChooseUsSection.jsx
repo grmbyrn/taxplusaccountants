@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import { Users2, CheckCircle2, CalendarDays } from 'lucide-react';
-import accountantsImage from '@/assets/accountants.jpg';
+import Image from "next/image";
+import { Users2, CheckCircle2, CalendarDays } from "lucide-react";
+import accountantsImage from "@/assets/accountants.jpg";
 
 const WhyChooseUsSection = () => (
   <section>
@@ -17,7 +17,7 @@ const WhyChooseUsSection = () => (
             width={600}
             height={300}
             className="rounded-2xl object-cover w-full h-auto"
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: "cover" }}
           />
         </div>
         {/* Cards */}
@@ -29,18 +29,30 @@ const WhyChooseUsSection = () => (
         >
           <div className="bg-white rounded-xl shadow p-6 flex flex-col items-start w-full xl:w-80">
             <Users2 className="text-black mb-4" size={32} />
-            <h3 className="text-xl font-semibold mb-2">Dedicated accounting team</h3>
-            <p className="text-muted-foreground">Excepteur sint occaecat cupidatat non proiden offici.</p>
+            <h3 className="text-xl font-semibold mb-2">
+              Dedicated accounting team
+            </h3>
+            <p className="text-muted-foreground">
+              Excepteur sint occaecat cupidatat non proiden offici.
+            </p>
           </div>
           <div className="bg-white rounded-xl shadow p-6 flex flex-col items-start w-full xl:w-80">
             <CheckCircle2 className="text-black mb-4" size={32} />
-            <h3 className="text-xl font-semibold mb-2">Filing and compliance</h3>
-            <p className="text-muted-foreground">Excepteur sint occaecat cupidatat non proiden offici.</p>
+            <h3 className="text-xl font-semibold mb-2">
+              Filing and compliance
+            </h3>
+            <p className="text-muted-foreground">
+              Excepteur sint occaecat cupidatat non proiden offici.
+            </p>
           </div>
           <div className="bg-white rounded-xl shadow p-6 flex flex-col items-start w-full xl:w-80">
             <CalendarDays className="text-black mb-4" size={32} />
-            <h3 className="text-xl font-semibold mb-2">Unlimited bookkeeping</h3>
-            <p className="text-muted-foreground">Excepteur sint occaecat cupidatat non proiden offici.</p>
+            <h3 className="text-xl font-semibold mb-2">
+              Unlimited bookkeeping
+            </h3>
+            <p className="text-muted-foreground">
+              Excepteur sint occaecat cupidatat non proiden offici.
+            </p>
           </div>
         </div>
       </div>

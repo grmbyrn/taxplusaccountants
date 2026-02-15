@@ -1,8 +1,252 @@
-import Link from 'next/link';
+import Link from "next/link";
+import { Phone } from "lucide-react";
+import { Mail } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-slate-200 py-16 bg-background" role="contentinfo" aria-label="Site footer"><div className="mx-auto max-w-[1400px] px-2.5 sm:px-6 lg:px-12"><div className="flex flex-col gap-12 lg:flex-row lg:justify-between"><div className="lg:max-w-xs"><Link className="flex items-center gap-3" aria-label="Taxplus Accountants - Home" href="/"><div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy overflow-hidden p-1.5"></div><span className="text-xl font-semibold text-slate-800">Taxplus Accountants</span></Link><p className="mt-4 text-sm text-slate-600">Professional bookkeeping and accounting services for Irish businesses. Revenue authorised tax agents serving Dublin, Cork, Galway, and nationwide.</p><address className="mt-6 space-y-2 not-italic"><a href="tel:+353894491693" className="flex items-center gap-2 text-sm text-slate-600 hover:text-amber-500 transition-colors" aria-label="Call us at 089 449 1693"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="h-4 w-4" aria-hidden="true"><path d="M231.88,175.08A56.26,56.26,0,0,1,176,224C96.6,224,32,159.4,32,80A56.26,56.26,0,0,1,80.92,24.12a16,16,0,0,1,16.62,9.52l21.12,47.15,0,.12A16,16,0,0,1,117.39,96c-.18.27-.37.52-.57.77L96,121.45c7.49,15.22,23.41,31,38.83,38.51l24.34-20.71a8.12,8.12,0,0,1,.75-.56,16,16,0,0,1,15.17-1.4l.13.06,47.11,21.11A16,16,0,0,1,231.88,175.08Z"></path></svg>089 449 1693</a><a href="mailto:hello@goodcompany.ie" className="flex items-center gap-2 text-sm text-slate-600 hover:text-amber-500 transition-colors" aria-label="Email us at hello@goodcompany.ie"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="h-4 w-4" aria-hidden="true"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path></svg>hello@goodcompany.ie</a><div className="flex items-center gap-2 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="h-4 w-4" aria-hidden="true"><path d="M128,16a88.1,88.1,0,0,0-88,88c0,75.3,80,132.17,83.41,134.55a8,8,0,0,0,9.18,0C136,236.17,216,179.3,216,104A88.1,88.1,0,0,0,128,16Zm0,56a32,32,0,1,1-32,32A32,32,0,0,1,128,72Z"></path></svg><span>Dublin, Cork &amp; Galway, Ireland</span></div></address></div><div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:gap-16"><nav aria-label="Services navigation"><h2 className="text-sm font-medium text-slate-800">Services</h2><ul className="mt-4 space-y-3"><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/bookkeeping-services">Bookkeeping Services</a></li><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/tax-services">Tax Services</a></li><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/personal-tax-advisor">Personal Tax Advisor</a></li><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/expat-tax-advisor">Expat Tax Advisor</a></li></ul></nav><nav aria-label="Company formation navigation"><h2 className="text-sm font-medium text-slate-800">Start a Business</h2><ul className="mt-4 space-y-3"><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/company-formation">Company Formation</a></li><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/register-business-name">Register Business Name</a></li><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/close-a-company">Close a Company</a></li><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/company-strike-off">Company Strike-Off</a></li><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/liquidate-limited-company">Company Liquidation</a></li></ul></nav><nav aria-label="Company navigation"><h2 className="text-sm font-medium text-slate-800">Company</h2><ul className="mt-4 space-y-3"><li><Link className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/#about">About Us</Link></li><li><Link className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/blog">Blog &amp; Guides</Link></li><li><Link className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/#testimonials">Testimonials</Link></li><li><Link className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/#faq">FAQ</Link></li><li><Link className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/#contact">Contact</Link></li></ul></nav><nav aria-label="Resources navigation"><h2 className="text-sm font-medium text-slate-800">Resources</h2><ul className="mt-4 space-y-3"><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/blog/setting-up-a-company">Company Setup Guide</a></li><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/blog/how-to-do-vat-returns">VAT Returns Guide</a></li><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/blog/what-is-bookkeeping">Bookkeeping Guide</a></li><li><a className="text-sm text-slate-600 hover:text-amber-500 transition-colors" href="/blog/how-to-close-a-company">Closing a Company Guide</a></li></ul></nav></div></div><div className="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4"><p className="text-xs text-slate-500">© 2026 Taxplus Accountants. All rights reserved. Registered in Ireland.</p><div className="flex items-center gap-4 text-xs text-slate-500"><span>Member: Chartered Accountants Ireland</span><span aria-hidden="true">•</span><span>Revenue Authorised Agent</span></div></div></div></footer>
+    <footer
+      className="border-t border-slate-200 py-16 bg-background"
+      role="contentinfo"
+      aria-label="Site footer"
+    >
+      <div className="mx-auto max-w-[1400px] px-2.5 sm:px-6 lg:px-12">
+        <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
+          <div className="lg:max-w-xs">
+            <Link
+              className="flex items-center gap-3"
+              aria-label="Taxplus Accountants - Home"
+              href="/"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy overflow-hidden p-1.5"></div>
+              <span className="text-xl font-semibold text-slate-800">
+                Taxplus Accountants
+              </span>
+            </Link>
+            <p className="mt-4 text-sm text-slate-600">
+              Professional bookkeeping and accounting services for Irish
+              businesses.
+            </p>
+            <address className="mt-6 space-y-2 not-italic">
+              <a
+                href="tel:+353894491693"
+                className="flex items-center gap-2 text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                aria-label="Call us at 041-9844525"
+              >
+                <Phone />
+                041-9844525
+              </a>
+              <a
+                href="tel:+353894491515"
+                className="flex items-center gap-2 text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                aria-label="Call us at 041-9844515"
+              >
+                <Phone />
+                041-9844515
+              </a>
+              <a
+                href="mailto:info@taxplusaccountants.ie"
+                className="flex items-center gap-2 text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                aria-label="Email us at info@taxplusaccountants.ie"
+              >
+                <Mail />
+                info@taxplusaccountants.ie
+              </a>
+              <div className="flex items-center gap-2 text-sm text-slate-600 hover:text-amber-500 transition-colors">
+                <MapPin />
+                <span>
+                  <Link
+                    href="https://maps.app.goo.gl/xc6PSMC9kpdAeBRq5"
+                    target="_blank"
+                  >
+                    John St, Lagavooren, Drogheda, Co. Louth, A92 D253, Ireland
+                  </Link>
+                </span>
+              </div>
+            </address>
+          </div>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:gap-16">
+            <nav aria-label="Services navigation">
+              <h2 className="text-sm font-medium text-slate-800">Services</h2>
+              <ul className="mt-4 space-y-3">
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/bookkeeping-services"
+                  >
+                    Bookkeeping Services
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/tax-services"
+                  >
+                    Tax Services
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/personal-tax-advisor"
+                  >
+                    Personal Tax Advisor
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/expat-tax-advisor"
+                  >
+                    Expat Tax Advisor
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <nav aria-label="Company formation navigation">
+              <h2 className="text-sm font-medium text-slate-800">
+                Start a Business
+              </h2>
+              <ul className="mt-4 space-y-3">
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/company-formation"
+                  >
+                    Company Formation
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/register-business-name"
+                  >
+                    Register Business Name
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/close-a-company"
+                  >
+                    Close a Company
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/company-strike-off"
+                  >
+                    Company Strike-Off
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/liquidate-limited-company"
+                  >
+                    Company Liquidation
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <nav aria-label="Company navigation">
+              <h2 className="text-sm font-medium text-slate-800">Company</h2>
+              <ul className="mt-4 space-y-3">
+                <li>
+                  <Link
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/#about"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/blog"
+                  >
+                    Blog &amp; Guides
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/#testimonials"
+                  >
+                    Testimonials
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/#faq"
+                  >
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/#contact"
+                  >
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            <nav aria-label="Resources navigation">
+              <h2 className="text-sm font-medium text-slate-800">Resources</h2>
+              <ul className="mt-4 space-y-3">
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/blog/setting-up-a-company"
+                  >
+                    Company Setup Guide
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/blog/how-to-do-vat-returns"
+                  >
+                    VAT Returns Guide
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/blog/what-is-bookkeeping"
+                  >
+                    Bookkeeping Guide
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
+                    href="/blog/how-to-close-a-company"
+                  >
+                    Closing a Company Guide
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-slate-500">
+            © 2026 Taxplus Accountants. All rights reserved. Registered in
+            Ireland.
+          </p>
+          <div className="flex items-center gap-4 text-xs text-slate-500">
+            <span>Member: Chartered Accountants Ireland</span>
+            <span aria-hidden="true">•</span>
+            <span>Revenue Authorised Agent</span>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 

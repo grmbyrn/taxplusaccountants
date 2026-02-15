@@ -18,40 +18,44 @@ const Services = () => {
             Everything you need to start and grow your business
           </h2>
           <p className="mt-4 text-lg text-slate-500">
-            From formation to ongoing accounting, we provide comprehensive support at every stage of your business journey.
+            From formation to ongoing accounting, we provide comprehensive
+            support at every stage of your business journey.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {/* Card 1 */}
           <ServiceCard
-            heading="Company Formation" paragraph="Launch your business with end-to-end support — CRO registration, constitution, tax setup, and full compliance."
-            href='/services/company-formation'
+            heading="Company Formation"
+            paragraph="Launch your business with end-to-end support — CRO registration, constitution, tax setup, and full compliance."
+            href="/services/company-formation"
             icon={<CompanyFormationIcon />}
           />
           {/* Card 2 */}
           <ServiceCard
-            heading="Business Name Registration" paragraph="Register your trading name with the CRO quickly and compliantly. Up and running in days."
-            href='/services/register-business-name'
+            heading="Business Name Registration"
+            paragraph="Register your trading name with the CRO quickly and compliantly. Up and running in days."
+            href="/services/register-business-name"
             icon={<BusinessNameRegistrationIcon />}
           />
           {/* Card 3 */}
           <ServiceCard
             heading="Bookkeeping &amp; Accounting"
             paragraph="VAT returns, payroll, management accounts — your day-to-day finances handled by professionals."
-            href='/services/bookkeeping-services'
+            href="/services/bookkeeping-and-accounts"
             icon={<BookkeepingAndAccountingIcon />}
           />
           {/* Card 4 */}
           <ServiceCard
             heading="Tax Returns"
             paragraph="Personal and business tax returns filed accurately and on time. Stay compliant with Revenue."
-            href='/services/tax-services'
+            href="/services/tax-returns"
             icon={<TaxReturnsIcon />}
           />
           {/* Card 5 */}
           <ServiceCard
-            heading="Close a Company" paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
-            href='/services/close-a-company'
+            heading="Close a Company"
+            paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
+            href="/services/close-a-company"
             icon={<CloseACompanyIcon />}
           />
         </div>

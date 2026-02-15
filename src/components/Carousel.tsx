@@ -1,5 +1,5 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 
 interface CarouselItem {
   title: string;
@@ -43,7 +43,9 @@ const Carousel = ({ items }: CarouselProps) => {
             <ChevronRight className="w-8 h-8 text-primary" />
           </button>
         </div>
-        <p className="text-muted-foreground">{items[activeIndex].description}</p>
+        <p className="text-muted-foreground">
+          {items[activeIndex].description}
+        </p>
       </div>
     </div>
   );

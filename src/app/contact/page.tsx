@@ -1,53 +1,57 @@
-'use client';
-import { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
-import PageHeader from '@/components/PageHeader';
+"use client";
+import { useState } from "react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
+import PageHeader from "@/components/PageHeader";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     toast({
       title: "Message Sent Successfully!",
       description: "We'll get back to you within 24 hours.",
     });
-    
+
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      service: '',
-      message: ''
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      service: "",
+      message: "",
     });
-    
+
     setIsSubmitting(false);
   };
 
@@ -56,26 +60,26 @@ const Contact = () => {
       icon: Phone,
       title: "Phone",
       content: "(555) 123-4567",
-      subtitle: "Mon-Fri 8AM-6PM"
+      subtitle: "Mon-Fri 8AM-6PM",
     },
     {
       icon: Mail,
       title: "Email",
       content: "info@premieraccounting.com",
-      subtitle: "We respond within 2 hours"
+      subtitle: "We respond within 2 hours",
     },
     {
       icon: MapPin,
       title: "Office",
       content: "123 Business Plaza, Suite 200",
-      subtitle: "City, State 12345"
+      subtitle: "City, State 12345",
     },
     {
       icon: Clock,
       title: "Hours",
       content: "Monday - Friday: 8AM - 6PM",
-      subtitle: "Saturday: 9AM - 2PM"
-    }
+      subtitle: "Saturday: 9AM - 2PM",
+    },
   ];
 
   return (
@@ -88,8 +92,8 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center m-16">
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ready to take control of your finances? Contact us today for a free consultation 
-            and discover how we can help your business thrive.
+            Ready to take control of your finances? Contact us today for a free
+            consultation and discover how we can help your business thrive.
           </p>
         </div>
 
@@ -97,13 +101,18 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="shadow-large border-0">
             <CardHeader>
-              <CardTitle className="text-2xl text-foreground">Send Us a Message</CardTitle>
+              <CardTitle className="text-2xl text-foreground">
+                Send Us a Message
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
                       Full Name *
                     </label>
                     <Input
@@ -117,7 +126,10 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
                       Email Address *
                     </label>
                     <Input
@@ -135,7 +147,10 @@ const Contact = () => {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
                       Phone Number
                     </label>
                     <Input
@@ -149,7 +164,10 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                    <label
+                      htmlFor="company"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
                       Company Name
                     </label>
                     <Input
@@ -164,7 +182,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
+                  <label
+                    htmlFor="service"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
                     Service Needed
                   </label>
                   <select
@@ -178,13 +199,18 @@ const Contact = () => {
                     <option value="tax">Tax Preparation & Planning</option>
                     <option value="accounting">Accounting Services</option>
                     <option value="bookkeeping">Bookkeeping</option>
-                    <option value="financial-planning">Financial Planning</option>
+                    <option value="financial-planning">
+                      Financial Planning
+                    </option>
                     <option value="consultation">General Consultation</option>
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
                     Message *
                   </label>
                   <Textarea
@@ -223,7 +249,9 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">
+                Contact Information
+              </h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start space-x-4">
@@ -231,9 +259,13 @@ const Contact = () => {
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-foreground mb-1">{info.title}</h4>
+                      <h4 className="text-lg font-semibold text-foreground mb-1">
+                        {info.title}
+                      </h4>
                       <p className="text-foreground mb-1">{info.content}</p>
-                      <p className="text-sm text-muted-foreground">{info.subtitle}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {info.subtitle}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -243,7 +275,9 @@ const Contact = () => {
             {/* Why Choose Us */}
             <Card className="bg-white shadow-medium">
               <CardContent className="p-8">
-                <h4 className="text-xl font-bold text-foreground mb-6">Why Choose Premier Accounting?</h4>
+                <h4 className="text-xl font-bold text-foreground mb-6">
+                  Why Choose Premier Accounting?
+                </h4>
                 <div className="space-y-4">
                   {[
                     "Free initial consultation",
@@ -251,7 +285,7 @@ const Contact = () => {
                     "15+ years of experience",
                     "Personalized service approach",
                     "Competitive pricing",
-                    "Year-round support"
+                    "Year-round support",
                   ].map((benefit, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
@@ -261,26 +295,25 @@ const Contact = () => {
                 </div>
               </CardContent>
             </Card>
-
           </div>
-            {/* Emergency Contact */}
-            <Card className="bg-gradient-primary text-white">
-              <CardContent className="p-8 text-center">
-                <h4 className="text-xl font-bold mb-4">Need Immediate Help?</h4>
-                <p className="mb-6 opacity-90">
-                  Tax deadline approaching? Financial emergency? 
-                  Call our priority support line.
-                </p>
-                <Button 
-                  variant="secondary"
-                  size="lg"
-                  className="bg-white text-primary hover:bg-gray-100"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  (555) 123-4567
-                </Button>
-              </CardContent>
-            </Card>
+          {/* Emergency Contact */}
+          <Card className="bg-gradient-primary text-white">
+            <CardContent className="p-8 text-center">
+              <h4 className="text-xl font-bold mb-4">Need Immediate Help?</h4>
+              <p className="mb-6 opacity-90">
+                Tax deadline approaching? Financial emergency? Call our priority
+                support line.
+              </p>
+              <Button
+                variant="secondary"
+                size="lg"
+                className="bg-white text-primary hover:bg-gray-100"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                (555) 123-4567
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
