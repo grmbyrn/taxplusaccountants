@@ -49,7 +49,7 @@ export default async function BlogPostPage({
   const recentPosts = posts.filter((p) => p.slug !== slug).slice(0, 5);
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-16">
+    <main className="max-w-8xl mx-auto px-4 py-16">
       <div className="flex flex-col lg:flex-row gap-12">
         <div className="flex-1 min-w-0">
           <h1 className="text-4xl font-bold mb-2">{data.title}</h1>

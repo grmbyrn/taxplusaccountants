@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { useState as useModalState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState, useRef, useLayoutEffect, CSSProperties } from "react";
 import { X, ChevronDown, ChevronUp } from "lucide-react";
@@ -33,8 +35,25 @@ const Header = () => {
     };
   }, []);
 
+  // Modal state for ContactForm
+  const [isContactModalOpen, setContactModalOpen] = useModalState(false);
+  const Modal = dynamic(() => import("./ui/modal"), { ssr: false });
+  const ContactForm = dynamic(() => import("./ContactForm"), { ssr: false });
+
   return (
-    <header ref={headerRef} className="w-full z-50 max-w-7xl mx-auto px-4 ">
+    <header
+      ref={headerRef}
+      className={`w-full z-50 max-w-7xl mx-auto px-4${isContactModalOpen ? " pointer-events-none select-none" : ""}`}
+    >
+      {/* Contact Modal */}
+      {isContactModalOpen && (
+        <Modal
+          open={isContactModalOpen}
+          onClose={() => setContactModalOpen(false)}
+        >
+          <ContactForm />
+        </Modal>
+      )}
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold text-gray-800">
           <Link href="/">
@@ -75,7 +94,7 @@ const Header = () => {
           // always fixed on mobile (so it never reflows to the top), static on md+
           className={`fixed md:static left-0 w-full md:w-auto bg-background md:bg-transparent shadow-md md:shadow-none z-50 transition-all duration-300
             ${isMenuOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-4"}
-            md:opacity-100 md:pointer-events-auto md:translate-y-0 md:flex`}
+            md:opacity-100 md:pointer-events-auto md:translate-y-0 md:flex${isContactModalOpen ? " pointer-events-none select-none" : ""}`}
           // always provide a top value (when known) so closing animation keeps the same position
           style={
             navTop !== undefined
@@ -90,8 +109,10 @@ const Header = () => {
             <li>
               <Link
                 href="/"
-                className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
+                className={`block py-2 text-gray-700 font-medium${!isContactModalOpen ? " hover:text-gray-900" : ""}`}
                 onClick={() => setMenuOpen(false)}
+                tabIndex={isContactModalOpen ? -1 : 0}
+                aria-disabled={isContactModalOpen}
               >
                 Home
               </Link>
@@ -99,8 +120,10 @@ const Header = () => {
             <li>
               <Link
                 href="/about"
-                className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
+                className={`block py-2 text-gray-700 font-medium${!isContactModalOpen ? " hover:text-gray-900" : ""}`}
                 onClick={() => setMenuOpen(false)}
+                tabIndex={isContactModalOpen ? -1 : 0}
+                aria-disabled={isContactModalOpen}
               >
                 About
               </Link>
@@ -108,10 +131,13 @@ const Header = () => {
             <li className="relative">
               <button
                 type="button"
-                className="flex items-center gap-1 py-2 text-gray-700 hover:text-gray-900 font-medium focus:outline-none"
+                className={`flex items-center gap-1 py-2 text-gray-700 font-medium focus:outline-none${!isContactModalOpen ? " hover:text-gray-900" : ""}`}
                 onClick={() => setServicesOpen((open) => !open)}
                 aria-expanded={isServicesOpen}
                 aria-haspopup="true"
+                tabIndex={isContactModalOpen ? -1 : 0}
+                aria-disabled={isContactModalOpen}
+                disabled={isContactModalOpen}
               >
                 Services
                 {isServicesOpen ? (
@@ -130,11 +156,13 @@ const Header = () => {
                 <li>
                   <Link
                     href="/services/bookkeeping-and-accounts"
-                    className="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
                     onClick={() => {
                       setMenuOpen(false);
                       setServicesOpen(false);
                     }}
+                    tabIndex={isContactModalOpen ? -1 : 0}
+                    aria-disabled={isContactModalOpen}
                   >
                     Bookkeeping & Accounts
                   </Link>
@@ -142,11 +170,13 @@ const Header = () => {
                 <li>
                   <Link
                     href="/services/tax-returns"
-                    className="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
                     onClick={() => {
                       setMenuOpen(false);
                       setServicesOpen(false);
                     }}
+                    tabIndex={isContactModalOpen ? -1 : 0}
+                    aria-disabled={isContactModalOpen}
                   >
                     Tax Returns
                   </Link>
@@ -154,11 +184,13 @@ const Header = () => {
                 <li>
                   <Link
                     href="/services/company-formation"
-                    className="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
                     onClick={() => {
                       setMenuOpen(false);
                       setServicesOpen(false);
                     }}
+                    tabIndex={isContactModalOpen ? -1 : 0}
+                    aria-disabled={isContactModalOpen}
                   >
                     Company Formation
                   </Link>
@@ -166,11 +198,13 @@ const Header = () => {
                 <li>
                   <Link
                     href="/services/register-business-name"
-                    className="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
                     onClick={() => {
                       setMenuOpen(false);
                       setServicesOpen(false);
                     }}
+                    tabIndex={isContactModalOpen ? -1 : 0}
+                    aria-disabled={isContactModalOpen}
                   >
                     Register Business Name
                   </Link>
@@ -178,11 +212,13 @@ const Header = () => {
                 <li>
                   <Link
                     href="/services/close-a-company"
-                    className="block px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
                     onClick={() => {
                       setMenuOpen(false);
                       setServicesOpen(false);
                     }}
+                    tabIndex={isContactModalOpen ? -1 : 0}
+                    aria-disabled={isContactModalOpen}
                   >
                     Close a Company
                   </Link>
@@ -192,8 +228,10 @@ const Header = () => {
             <li>
               <Link
                 href="/resources"
-                className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
+                className={`block py-2 text-gray-700 font-medium${!isContactModalOpen ? " hover:text-gray-900" : ""}`}
                 onClick={() => setMenuOpen(false)}
+                tabIndex={isContactModalOpen ? -1 : 0}
+                aria-disabled={isContactModalOpen}
               >
                 Resources
               </Link>
@@ -201,20 +239,28 @@ const Header = () => {
             <li>
               <Link
                 href="/blog"
-                className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
+                className={`block py-2 text-gray-700 font-medium${!isContactModalOpen ? " hover:text-gray-900" : ""}`}
                 onClick={() => setMenuOpen(false)}
+                tabIndex={isContactModalOpen ? -1 : 0}
+                aria-disabled={isContactModalOpen}
               >
                 Blog
               </Link>
             </li>
             <li>
-              <Link
-                href="/contact"
-                className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
-                onClick={() => setMenuOpen(false)}
+              <button
+                type="button"
+                className={`inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-10 has-[>svg]:px-4 bg-amber-500 text-navy font-semibold px-8 py-6 text-base rounded-full shadow-lg shadow-amber-500/20${!isContactModalOpen ? " hover:bg-amber-600" : ""}`}
+                onClick={() => {
+                  setMenuOpen(false);
+                  setContactModalOpen(true);
+                }}
+                tabIndex={isContactModalOpen ? -1 : 0}
+                aria-disabled={isContactModalOpen}
+                disabled={isContactModalOpen}
               >
                 Contact
-              </Link>
+              </button>
             </li>
           </ul>
         </nav>

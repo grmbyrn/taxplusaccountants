@@ -33,7 +33,7 @@ const FAQ = () => {
 
   return (
     <section className="py-24 border-t border-slate-200 overflow-hidden bg-background">
-      <div className="mx-auto max-w-[800px] px-2.5 sm:px-6 lg:px-12">
+      <div className="mx-auto max-w-[1100px] px-2.5 sm:px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16 transition-all duration-700 opacity-100 translate-y-0 blur-0">
           <span className="text-sm font-medium text-amber-500 uppercase tracking-wider">
             FAQ

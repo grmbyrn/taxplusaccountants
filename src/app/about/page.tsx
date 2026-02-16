@@ -1,9 +1,10 @@
 "use client";
+import Contact from "@/components/Contact";
 import Image from "next/image";
 
 const About = () => {
   return (
-    <section id="about" className="max-w-6xl mx-auto px-4 py-20">
+    <section id="about" className="max-w-8xl mx-auto px-4 py-20 ">
       <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16">
         {/* Text content */}
         <div className="w-full md:w-1/2 flex flex-col justify-center order-2 md:order-1">
@@ -18,18 +19,18 @@ const About = () => {
           {/* Optional: Add a call-to-action or arrow here if needed */}
         </div>
         {/* Image */}
-        <div className="w-full md:w-1/2 flex justify-center order-1 md:order-2 mb-8 md:mb-0">
+        <div className="w-full md:w-1/2 flex justify-end order-1 md:order-2 mb-8 md:mb-0">
           <Image
-            width={908}
+            width={1008}
             height={648}
-            className="rounded-2xl w-full h-auto max-w-[500px] md:min-w-[380px] md:max-w-[420px] shadow-lg"
+            className="rounded-2xl w-full h-auto max-w-full md:max-w-[600px] shadow-lg"
             alt="About Us"
             src="https://taxassistassets.ams3.cdn.digitaloceanspaces.com/client/2020/PageMenuDefault.jpg"
             priority
           />
         </div>
       </div>
-      <div className="max-w-4xl md:max-w-5xl mx-auto py-8 px-4 sm:px-8">
+      <div className="max-w-8xl mx-auto py-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-amber-600 mb-4 text-left">
           Who We Are
         </h2>
@@ -68,6 +69,7 @@ const About = () => {
           business.
         </p>
       </div>
+      <Contact />
     </section>
   );
 };

@@ -81,15 +81,20 @@ const Testimonials = () => {
         <div className="max-w-4xl mx-auto mb-12  ">
           <Card className="border border-slate-200 shadow-2xl shadow-slate-300 rounded-2xl bg-white">
             <CardContent className="p-12 text-center">
-              <blockquote className="text-lg md:text-xl text-foreground font-medium leading-relaxed mb-8">
+              <blockquote className="mb-8">
                 {Array.isArray(current.content) ? (
                   current.content.map((para, i) => (
-                    <p key={i} className="mb-4 last:mb-0">
+                    <p
+                      key={i}
+                      className="mb-4 last:mb-0 text-base text-slate-600 font-normal leading-relaxed"
+                    >
                       {para}
                     </p>
                   ))
                 ) : (
-                  <p>{current.content}</p>
+                  <p className="text-base text-slate-600 font-normal leading-relaxed">
+                    {current.content}
+                  </p>
                 )}
               </blockquote>
 

@@ -23,7 +23,7 @@ const ContactUsFloatingButton = () => {
     <>
       {showButton && (
         <button
-          className="fixed bottom-6 right-6 z-40 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all animate-fadeIn"
+          className="fixed bottom-6 right-12 z-40 bg-amber-500 hover:bg-amber-600 font-semibold px-6 py-3 rounded-xl shadow-lg transition-all animate-fadeIn"
           onClick={() => setOpen(true)}
         >
           Contact Us

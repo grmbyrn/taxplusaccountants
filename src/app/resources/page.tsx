@@ -6,8 +6,8 @@ import Contact from "@/components/Contact";
 export default function Resources() {
   return (
     <main>
-      <section className="pt-32 pb-12 md:pt-40 md:pb-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section className="pt-32 pb-12 md:pt-40 md:pb-16 ">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 ">
           <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
             Resources
           </h1>
