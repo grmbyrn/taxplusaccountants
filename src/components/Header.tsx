@@ -5,7 +5,7 @@ import { useState as useModalState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState, useRef, useLayoutEffect, CSSProperties } from "react";
-import { X, ChevronDown, ChevronUp } from "lucide-react";
+import { X, ChevronDown, ChevronUp, Phone } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -65,10 +65,18 @@ const Header = () => {
             />
           </Link>
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={() => setContactModalOpen(true)}
+            className="focus:outline-none p-2 rounded-full bg-amber-500 hover:bg-amber-600"
+            aria-label="Contact"
+          >
+            <Phone className="w-6 h-6 text-black" />
+          </button>
           <button
             onClick={() => setMenuOpen(!isMenuOpen)}
-            className="focus:outline-none"
+            className="focus:outline-none p-2"
+            aria-label="Menu"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6" />

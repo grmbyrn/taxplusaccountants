@@ -6,8 +6,8 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-12 pb-12">
-      <div className="container mx-auto text-center">
+    <section id="home" className="py-24">
+      <div className="container mx-auto max-w-[1400px] text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50/80 backdrop-blur-sm px-4 py-1.5 text-sm text-amber-600 mb-8 transition-all duration-700 opacity-100 translate-y-0">
           <StarsIcon />
           Business &amp; Accounting Consultancy

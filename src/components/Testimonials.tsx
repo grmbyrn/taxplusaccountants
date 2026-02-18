@@ -64,9 +64,9 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-20 bg-background border-t border-slate-200"
+      className="py-24 bg-background border-t border-slate-200"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-[1400px] px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-amber-500 uppercase tracking-wider">

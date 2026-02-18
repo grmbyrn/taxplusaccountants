@@ -8,7 +8,7 @@ import TaxReturnsIcon from "../assets/icons/TaxReturnsIcon";
 
 const Services = () => {
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="py-24 border-t border-slate-200 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-2.5 sm:px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16 transition-all duration-700 opacity-100 translate-y-0">
           <span className="text-sm font-medium text-amber-500 uppercase tracking-wider">
@@ -22,7 +22,7 @@ const Services = () => {
             support at every stage of your business journey.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 */}
           <ServiceCard
             heading="Company Formation"

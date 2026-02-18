@@ -1,6 +1,6 @@
 export default function Accreditations() {
   return (
-    <section className="py-16 border-t border-slate-200 overflow-hidden">
+    <section className="py-24 border-t border-slate-200 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-2.5 sm:px-6 lg:px-12">
         <p className="text-center text-sm text-slate-500 mb-10 transition-all duration-700 opacity-100 translate-y-0 blur-0">
           Fully accredited and recognised by Ireland&apos;s leading professional

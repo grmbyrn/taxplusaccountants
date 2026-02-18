@@ -14,7 +14,7 @@ export default function HowItWorks() {
             Getting started is simple
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-8">
           {/* Step 1 */}
           <div className="relative transition-all duration-700 ease-out opacity-100 translate-y-0 scale-100">
             <div className="hidden md:block absolute top-10 left-[60%] h-px bg-gradient-to-r from-amber-400 to-transparent transition-all duration-1000 ease-out origin-left w-[80%] opacity-100"></div>
