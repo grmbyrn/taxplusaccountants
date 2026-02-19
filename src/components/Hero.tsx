@@ -3,9 +3,17 @@
 // import Image from 'next/image';
 import { StarsIcon } from "lucide-react";
 import { ArrowRight } from "lucide-react";
+import {motion} from "framer-motion";
 
 const Hero = () => {
   return (
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+      className=""
+    >
     <section id="home" className="py-24">
       <div className="container mx-auto max-w-[1400px] text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50/80 backdrop-blur-sm px-4 py-1.5 text-sm text-amber-600 mb-8 transition-all duration-700 opacity-100 translate-y-0">
@@ -63,6 +71,7 @@ const Hero = () => {
         </div>
       </dl>
     </section>
+    </motion.section>
   );
 };
 

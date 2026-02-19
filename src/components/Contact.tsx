@@ -3,11 +3,19 @@ import { useState } from "react";
 import { Phone, ArrowRight } from "lucide-react";
 import Modal from "@/components/ui/modal";
 import ContactForm from "@/components/ContactForm";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [open, setOpen] = useState(false);
   return (
     <>
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+      className=""
+    >
       <section
         id="contact"
         className="py-24 border-t border-slate-200 overflow-hidden"
@@ -89,8 +97,17 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      </motion.section>
       <Modal open={open} onClose={() => setOpen(false)}>
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+            className=""
+          >
         <ContactForm />
+        </motion.section>
       </Modal>
     </>
   );

@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState, useRef, useLayoutEffect, CSSProperties } from "react";
 import { X, ChevronDown, ChevronUp, Phone } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -154,84 +155,90 @@ const Header = () => {
                   <ChevronDown className="w-4 h-4" />
                 )}
               </button>
-              {/* Dropdown menu */}
-              <ul
-                className={`absolute left-0 mt-2 w-56 rounded-xl bg-white shadow-lg border border-slate-200 transition-all duration-200 z-50
-                  ${isServicesOpen ? "block" : "hidden"}
-                `}
-                onMouseLeave={() => setServicesOpen(false)}
-              >
-                <li>
-                  <Link
-                    href="/services/bookkeeping-and-accounts"
-                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    tabIndex={isContactModalOpen ? -1 : 0}
-                    aria-disabled={isContactModalOpen}
+              {/* Dropdown menu with animation */}
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.ul
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="absolute left-0 mt-2 w-56 rounded-xl bg-white shadow-lg border border-slate-200 z-50"
+                    onMouseLeave={() => setServicesOpen(false)}
                   >
-                    Bookkeeping & Accounts
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/tax-returns"
-                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    tabIndex={isContactModalOpen ? -1 : 0}
-                    aria-disabled={isContactModalOpen}
-                  >
-                    Tax Returns
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/company-formation"
-                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    tabIndex={isContactModalOpen ? -1 : 0}
-                    aria-disabled={isContactModalOpen}
-                  >
-                    Company Formation
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/register-business-name"
-                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    tabIndex={isContactModalOpen ? -1 : 0}
-                    aria-disabled={isContactModalOpen}
-                  >
-                    Register Business Name
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/close-a-company"
-                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
-                    onClick={() => {
-                      setMenuOpen(false);
-                      setServicesOpen(false);
-                    }}
-                    tabIndex={isContactModalOpen ? -1 : 0}
-                    aria-disabled={isContactModalOpen}
-                  >
-                    Close a Company
-                  </Link>
-                </li>
-              </ul>
+                    <li>
+                      <Link
+                        href="/services/bookkeeping-and-accounts"
+                        className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setServicesOpen(false);
+                        }}
+                        tabIndex={isContactModalOpen ? -1 : 0}
+                        aria-disabled={isContactModalOpen}
+                      >
+                        Bookkeeping & Accounts
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/services/tax-returns"
+                        className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setServicesOpen(false);
+                        }}
+                        tabIndex={isContactModalOpen ? -1 : 0}
+                        aria-disabled={isContactModalOpen}
+                      >
+                        Tax Returns
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/services/company-formation"
+                        className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setServicesOpen(false);
+                        }}
+                        tabIndex={isContactModalOpen ? -1 : 0}
+                        aria-disabled={isContactModalOpen}
+                      >
+                        Company Formation
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/services/register-business-name"
+                        className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setServicesOpen(false);
+                        }}
+                        tabIndex={isContactModalOpen ? -1 : 0}
+                        aria-disabled={isContactModalOpen}
+                      >
+                        Register Business Name
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/services/close-a-company"
+                        className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setServicesOpen(false);
+                        }}
+                        tabIndex={isContactModalOpen ? -1 : 0}
+                        aria-disabled={isContactModalOpen}
+                      >
+                        Close a Company
+                      </Link>
+                    </li>
+                  </motion.ul>
+                )}
+              </AnimatePresence>
             </li>
             <li>
               <Link

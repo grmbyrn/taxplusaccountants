@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -32,6 +33,13 @@ const FAQ = () => {
   };
 
   return (
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+      className=""
+    >
     <section className="py-24 border-t border-slate-200 overflow-hidden bg-background">
       <div className="mx-auto max-w-[1400px] px-2.5 sm:px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16 transition-all duration-700 opacity-100 translate-y-0 blur-0">
@@ -76,6 +84,7 @@ const FAQ = () => {
         </div>
       </div>
     </section>
+    </motion.section>
   );
 };
 

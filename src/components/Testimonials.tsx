@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -62,6 +63,13 @@ const Testimonials = () => {
   const current = testimonials[currentTestimonial];
 
   return (
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+      className=""
+    >
     <section
       id="testimonials"
       className="py-24 bg-background border-t border-slate-200"
@@ -180,6 +188,7 @@ const Testimonials = () => {
         </div>
       </div>
     </section>
+    </motion.section>
   );
 };
 
