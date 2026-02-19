@@ -17,6 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon-new.ico" />
+      </head>
       <body className="font-sans bg-background text-gray-800">
         <Header />
         <main>
