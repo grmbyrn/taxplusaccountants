@@ -4,6 +4,7 @@ import { Mail } from "lucide-react";
 import { MapPin } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer
       className="border-t border-slate-200 py-16 bg-background"
@@ -195,40 +196,16 @@ const Footer = () => {
                 </li>
               </ul>
             </nav>
-            <nav aria-label="Resources navigation">
-              <h2 className="text-sm font-medium text-slate-800">Resources</h2>
+            <nav aria-label="Policies navigation">
+              <h2 className="text-sm font-medium text-slate-800">Policies</h2>
               <ul className="mt-4 space-y-3">
                 <li>
-                  <a
+                  <Link
                     className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/blog/setting-up-a-company"
+                    href="/privacy-policy"
                   >
-                    Company Setup Guide
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/blog/how-to-do-vat-returns"
-                  >
-                    VAT Returns Guide
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/blog/what-is-bookkeeping"
-                  >
-                    Bookkeeping Guide
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/blog/how-to-close-a-company"
-                  >
-                    Closing a Company Guide
-                  </a>
+                    Privacy Policy
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -236,9 +213,11 @@ const Footer = () => {
         </div>
         <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500">
-            © 2026 Taxplus Accountants. All rights reserved. Registered in
-            Ireland.
+            © {currentYear} Taxplus Accountants. All rights reserved. Registered in Ireland.
           </p>
+          <Link href="https://graemebyrne.com" target="_blank" className="text-amber-600 hover:underline">
+            Site by Graeme Byrne
+          </Link>
           <div className="flex items-center gap-4 text-xs text-slate-500">
             <span>Member: Chartered Accountants Ireland</span>
             <span aria-hidden="true">•</span>
