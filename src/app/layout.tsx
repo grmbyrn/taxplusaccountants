@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "../app/globals.css";
 
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactUsFloatingButton from "@/components/ContactUsFloatingButton";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 export const metadata: Metadata = {
   title: "Taxplus Accountants",
@@ -27,6 +29,7 @@ export default function RootLayout({
         </main>
         <ContactUsFloatingButton />
         <Footer />
+        <CookieConsentBanner />
       </body>
     </html>
   );

@@ -63,6 +63,7 @@ const Header = () => {
               alt="Taxplus Accountants Logo"
               width={250}
               height={250}
+              loading="eager"
             />
           </Link>
         </div>
