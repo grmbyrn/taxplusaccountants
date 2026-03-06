@@ -129,7 +129,7 @@ const Header = () => {
             </li>
             <li>
               <Link
-                href="/about"
+                href="/#about"
                 className={`block py-2 text-gray-700 font-medium${!isContactModalOpen ? " hover:text-gray-900" : ""}`}
                 onClick={() => setMenuOpen(false)}
                 tabIndex={isContactModalOpen ? -1 : 0}
