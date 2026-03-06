@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
-    "test": "jest"
+    "test": "jest",
+    "e2e": "playwright test",
+    "e2e:ci": "npx playwright install --with-deps && playwright test --reporter=github"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -30,6 +32,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
