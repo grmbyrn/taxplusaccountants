@@ -49,22 +49,18 @@ export default function About() {
             <ServiceInfoCard
               heading="Expertise"
               paragraph="Qualified Chartered Accountants with deep knowledge of Irish tax law and Revenue compliance."
-              icon={""}
             />
             <ServiceInfoCard
               heading="Efficiency"
               paragraph="We handle the numbers fast and accurately so you can focus on running your business."
-              icon={""}
             />
             <ServiceInfoCard
               heading="Quality"
               paragraph="Every return, report, and submission is reviewed for accuracy before it leaves our desk."
-              icon={""}
             />
             <ServiceInfoCard
               heading="Innovation"
               paragraph="We use modern tools and automation to keep your books clean without the overhead."
-              icon={""}
             />
           </div>
         </div>
