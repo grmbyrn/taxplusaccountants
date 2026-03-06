@@ -1,0 +1,22 @@
+name: Dependency Review (npm audit)
+on:
+  pull_request:
+
+jobs:
+  dependency_review:
+    runs-on: ubuntu-latest
+    name: Dependency review for pull requests
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run npm audit (fail on high/critical)
+        run: |
+          npm audit --audit-level=high || (echo "npm audit detected high/critical vulnerabilities" && exit 1)

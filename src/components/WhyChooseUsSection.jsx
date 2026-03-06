@@ -6,7 +6,7 @@ const WhyChooseUsSection = () => (
   <section>
     <div className="container mx-auto mt-16 sm:mt-20 lg:mt-28">
       <h2 className="text-3xl xl:text-4xl font-bold text-foreground mb-6 text-center">
-        We're the best option for your finances
+        We&apos;re the best option for your finances
       </h2>
       <div className="relative flex flex-col xl:flex-row items-start xl:items-center mb-20">
         {/* Image */}

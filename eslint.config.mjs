@@ -10,6 +10,18 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    // Migrate ignore patterns from .eslintignore (newer ESLint expects `ignores` here)
+    ignores: [
+      ".next",
+      "node_modules",
+      "dist",
+      "coverage",
+      "public",
+      ".vscode",
+      "*.log",
+    ],
+  },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
