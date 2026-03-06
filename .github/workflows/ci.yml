@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        # Next.js build requires Node >= 20.9.0 — run CI on supported versions only
+        node-version: [20.9.x, 22.x]
 
     steps:
       - uses: actions/checkout@v4

@@ -16,6 +16,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  redirects: async () => [
+    {
+      source: '/about',
+      destination: '/#about',
+      permanent: true,
+    },
+  ]
 };
 
 export default withMDX(nextConfig);
