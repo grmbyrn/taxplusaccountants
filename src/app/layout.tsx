@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactUsFloatingButton from "@/components/ContactUsFloatingButton";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import VercelIntegrations from "@/components/VercelIntegrations";
 
 export const metadata: Metadata = {
   title: "Tax Plus Accountants | Drogheda Accountants & Business Advisors",
@@ -55,6 +56,7 @@ export default function RootLayout({
         <ContactUsFloatingButton />
         <Footer />
         <CookieConsentBanner />
+        <VercelIntegrations />
       </body>
     </html>
   );
