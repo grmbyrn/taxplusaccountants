@@ -40,28 +40,42 @@ const Services = () => {
             />
             {/* Card 2 */}
             <ServiceCard
-              heading="Business Name Registration"
+              heading="Company Formation"
               paragraph="Register your trading name with the CRO quickly and compliantly. Up and running in days."
               href="/services/register-business-name"
               icon={<BusinessNameRegistrationIcon />}
             />
             {/* Card 3 */}
             <ServiceCard
-              heading="Bookkeeping &amp; Accounting"
+              heading="Company Closure"
               paragraph="VAT returns, payroll, management accounts — your day-to-day finances handled by professionals."
               href="/services/bookkeeping-and-accounts"
               icon={<BookkeepingAndAccountingIcon />}
             />
             {/* Card 4 */}
             <ServiceCard
-              heading="Tax Returns"
+              heading="Business Names"
               paragraph="Personal and business tax returns filed accurately and on time. Stay compliant with Revenue."
               href="/services/tax-returns"
               icon={<TaxReturnsIcon />}
             />
             {/* Card 5 */}
             <ServiceCard
-              heading="Close a Company"
+              heading="Bookkeeping & Accounts"
+              paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
+              href="/services/close-a-company"
+              icon={<CloseACompanyIcon />}
+            />
+            {/* Card 6 */}
+            <ServiceCard
+              heading="Tax Returns"
+              paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
+              href="/services/close-a-company"
+              icon={<CloseACompanyIcon />}
+            />
+            {/* Card 7 */}
+            <ServiceCard
+              heading="Payroll/Wages Preparation"
               paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
               href="/services/close-a-company"
               icon={<CloseACompanyIcon />}
