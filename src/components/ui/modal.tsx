@@ -22,6 +22,7 @@ const Modal = ({ open, onClose, children }: ModalProps) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 pointer-events-auto">
       <div className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-8 relative animate-fadeIn pointer-events-auto">
         <button
+          type="button"
           onClick={onClose}
           className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-2xl font-bold focus:outline-none"
           aria-label="Close modal"

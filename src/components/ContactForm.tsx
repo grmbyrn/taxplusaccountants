@@ -2,7 +2,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
-
+import Modal from "@/components/ui/modal";
 
 import React, { useState } from "react";
 
@@ -17,6 +17,8 @@ const ContactForm = () => {
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -31,26 +33,68 @@ const ContactForm = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-    setSubmitted(true);
-    // Optionally: send form data to Formspree or other endpoint
-    e.currentTarget.submit();
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://formspree.io/f/xvzbdkbd", {
+        method: "POST",
+        body: JSON.stringify(form),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setErrors({});
+        setForm({ name: "", email: "", phone: "", company: "", service: "", message: "" });
+        setShowModal(true);
+      } else {
+        let errorData: string | Record<string, unknown> | null = null;
+        const contentType = response.headers.get("content-type") || "";
+        if (contentType.includes("application/json")) {
+          try {
+            errorData = (await response.json()) as Record<string, unknown>;
+          } catch {
+            errorData = { parseError: "Invalid JSON response" };
+          }
+        } else {
+          try {
+            errorData = await response.text();
+          } catch {
+            errorData = "Unknown error";
+          }
+        }
+
+        console.error("Form submission failed", { status: response.status, statusText: response.statusText, body: errorData });
+        setErrors({ ...errors, submit: "Failed to send message. Please try again later." });
+      }
+    } catch (err) {
+      console.error("Network error sending form", err);
+      setErrors({ ...errors, submit: "Network error. Please check your connection and try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <form
-      action="https://formspree.io/f/xvzbdkbd"
-      method="POST"
-      className="space-y-6"
-      onSubmit={handleSubmit}
-      noValidate
-    >
+    <>
+      {!showModal && (
+        <form
+          action="https://formspree.io/f/xvzbdkbd"
+          method="POST"
+          className="space-y-6"
+          onSubmit={handleSubmit}
+          noValidate
+        >
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Full Name *</label>
@@ -148,12 +192,40 @@ const ContactForm = () => {
       <Button
         type="submit"
         className="w-full bg-amber-500 hover:bg-amber-600 text-white shadow-lg text-lg py-6"
-        disabled={submitted}
+        disabled={isSubmitting || submitted}
       >
         <Send className="w-5 h-5 mr-2" />
-        {submitted ? "Sending..." : "Send Message"}
+        {isSubmitting ? "Sending..." : submitted ? "Sent" : "Send Message"}
       </Button>
-    </form>
+          {errors.submit && <p className="text-red-600 text-sm mt-2">{errors.submit}</p>}
+        </form>
+      )}
+
+      <Modal
+        open={showModal}
+        onClose={() => {
+          setShowModal(false);
+          setSubmitted(false);
+        }}
+      >
+        <div className="text-center">
+          <h3 className="text-2xl font-semibold text-foreground mb-2">Message sent</h3>
+          <p className="text-sm text-muted-foreground mb-6">Thanks — your message has been sent. We will get back to you shortly.</p>
+          <div className="flex justify-center">
+            <Button
+              type="button"
+              className="bg-amber-500 hover:bg-amber-600 text-white shadow-lg"
+              onClick={() => {
+                setShowModal(false);
+                setSubmitted(false);
+              }}
+            >
+              Close
+            </Button>
+          </div>
+        </div>
+      </Modal>
+    </>
   );
 };
 
