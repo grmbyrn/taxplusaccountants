@@ -21,9 +21,9 @@ const Hero = () => {
           Business &amp; Accounting Consultancy
         </div>
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.08] transition-all duration-700 delay-100 opacity-100 translate-y-0">
-          Better Accounts
+          Taxplus Accountants
           <br />
-          <span className="text-amber-500">Start Here</span>
+          <span className="text-amber-500">Expertise for SMEs</span>
         </h1>
         <p className="mt-6 text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed transition-all duration-700 delay-200 opacity-100 translate-y-0">
           Better accounts, better decisions, better growth. TaxPlus Accountants
@@ -40,7 +40,7 @@ const Hero = () => {
             aria-controls="radix-_r_3b_"
             data-state="closed"
           >
-            Get Started Free
+            Get Started
             <ArrowRight />
           </button>
           <a
@@ -52,7 +52,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <dl className="mt-16 flex items-center justify-center gap-12 sm:gap-16 transition-all duration-700 delay-500 opacity-100 translate-y-0">
+      {/* <dl className="mt-16 flex items-center justify-center gap-12 sm:gap-16 transition-all duration-700 delay-500 opacity-100 translate-y-0">
         <div className="text-center">
           <dd className="text-3xl sm:text-4xl font-bold text-slate-900">
             500+
@@ -69,7 +69,7 @@ const Hero = () => {
           </dd>
           <dt className="mt-1 text-sm text-slate-500">Revenue Compliant</dt>
         </div>
-      </dl>
+      </dl> */}
     </section>
     </motion.section>
   );

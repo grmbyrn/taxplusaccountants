@@ -118,17 +118,6 @@ const Header = () => {
           <ul className="flex flex-col md:flex-row md:space-x-8 p-4 md:p-0 items-center">
             <li>
               <Link
-                href="/"
-                className={`block py-2 text-gray-700 font-medium${!isContactModalOpen ? " hover:text-gray-900" : ""}`}
-                onClick={() => setMenuOpen(false)}
-                tabIndex={isContactModalOpen ? -1 : 0}
-                aria-disabled={isContactModalOpen}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/#about"
                 className={`block py-2 text-gray-700 font-medium${!isContactModalOpen ? " hover:text-gray-900" : ""}`}
                 onClick={() => setMenuOpen(false)}
