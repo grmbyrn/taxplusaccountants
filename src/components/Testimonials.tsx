@@ -149,43 +149,6 @@ const Testimonials = () => {
             </Button>
           </div>
         </div>
-
-        {/* Stats Row */}
-        <div className="grid sm:grid-cols-3 gap-8 text-center">
-          <div className="p-6">
-            <div className="text-3xl md:text-4xl font-bold text-amber-500 mb-2">
-              98%
-            </div>
-            <div className="text-base md:text-lg font-semibold text-foreground mb-1">
-              Client Satisfaction
-            </div>
-            <div className="text-sm text-muted-foreground">
-              Based on annual surveys
-            </div>
-          </div>
-          <div className="p-6">
-            <div className="text-3xl md:text-4xl font-bold text-amber-500 mb-2">
-              4.9/5
-            </div>
-            <div className="text-base md:text-lg font-semibold text-foreground mb-1">
-              Average Rating
-            </div>
-            <div className="text-sm text-muted-foreground">
-              From verified reviews
-            </div>
-          </div>
-          <div className="p-6">
-            <div className="text-3xl md:text-4xl font-bold text-amber-500 mb-2">
-              95%
-            </div>
-            <div className="text-base md:text-lg font-semibold text-foreground mb-1">
-              Client Retention
-            </div>
-            <div className="text-sm text-muted-foreground">
-              Long-term partnerships
-            </div>
-          </div>
-        </div>
       </div>
     </section>
     </motion.section>

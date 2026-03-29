@@ -40,45 +40,38 @@ const Services = () => {
             />
             {/* Card 2 */}
             <ServiceCard
-              heading="Company Formation"
-              paragraph="Register your trading name with the CRO quickly and compliantly. Up and running in days."
-              href="/services/register-business-name"
-              icon={<BusinessNameRegistrationIcon />}
-            />
-            {/* Card 3 */}
-            <ServiceCard
               heading="Company Closure"
               paragraph="VAT returns, payroll, management accounts — your day-to-day finances handled by professionals."
               href="/services/bookkeeping-and-accounts"
-              icon={<BookkeepingAndAccountingIcon />}
+              icon={<CloseACompanyIcon />}
             />
-            {/* Card 4 */}
+            {/* Card 3 */}
             <ServiceCard
               heading="Business Names"
               paragraph="Personal and business tax returns filed accurately and on time. Stay compliant with Revenue."
               href="/services/tax-returns"
-              icon={<TaxReturnsIcon />}
+              icon={<BusinessNameRegistrationIcon />}
             />
-            {/* Card 5 */}
+            {/* Card 4 */}
             <ServiceCard
               heading="Bookkeeping & Accounts"
               paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
               href="/services/close-a-company"
-              icon={<CloseACompanyIcon />}
+              icon={<BookkeepingAndAccountingIcon />}
             />
-            {/* Card 6 */}
+            {/* Card 5 */}
             <ServiceCard
               heading="Tax Returns"
               paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
               href="/services/close-a-company"
-              icon={<CloseACompanyIcon />}
+              icon={<TaxReturnsIcon />}
             />
-            {/* Card 7 */}
+            {/* Card 6 */}
             <ServiceCard
               heading="Payroll/Wages Preparation"
               paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
               href="/services/close-a-company"
-              icon={<CloseACompanyIcon />}
+              icon={<BookkeepingAndAccountingIcon />}
             />
           </div>
         </div>

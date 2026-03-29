@@ -31,7 +31,7 @@ const Hero = () => {
           business thrive.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4 transition-all duration-700 delay-300 opacity-100 translate-y-0">
-          <button
+          <a href='#how-it-works'
             data-slot="dialog-trigger"
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-10 has-[&gt;svg]:px-4 bg-amber-500 hover:bg-amber-600 text-navy font-semibold px-8 py-6 text-base rounded-full shadow-lg shadow-amber-500/20"
             type="button"
@@ -42,7 +42,7 @@ const Hero = () => {
           >
             Get Started
             <ArrowRight />
-          </button>
+          </a>
           <a
             href="#services"
             data-slot="button"
@@ -52,7 +52,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      {/* <dl className="mt-16 flex items-center justify-center gap-12 sm:gap-16 transition-all duration-700 delay-500 opacity-100 translate-y-0">
+      <dl className="mt-16 flex items-center justify-center gap-12 sm:gap-16 transition-all duration-700 delay-500 opacity-100 translate-y-0">
         <div className="text-center">
           <dd className="text-3xl sm:text-4xl font-bold text-slate-900">
             500+
@@ -69,7 +69,7 @@ const Hero = () => {
           </dd>
           <dt className="mt-1 text-sm text-slate-500">Revenue Compliant</dt>
         </div>
-      </dl> */}
+      </dl>
     </section>
     </motion.section>
   );
