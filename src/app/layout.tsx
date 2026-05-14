@@ -7,7 +7,13 @@ import ContactUsFloatingButton from "@/components/ContactUsFloatingButton";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import VercelIntegrations from "@/components/VercelIntegrations";
 
+const META_BASE =
+  process.env.NEXT_PUBLIC_METADATA_BASE ??
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://taxplusaccountants.ie";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(META_BASE),
   title: "Tax Plus Accountants | Drogheda Accountants & Business Advisors",
   description: "Tax Plus Accountants offers expert accounting, tax, payroll, and business advisory services in Drogheda and nationwide. Trusted by hundreds of businesses.",
   openGraph: {

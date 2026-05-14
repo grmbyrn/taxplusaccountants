@@ -64,6 +64,7 @@ const Header = () => {
               width={250}
               height={250}
               loading="eager"
+              style={{ width: 'auto' }}
             />
           </Link>
         </div>

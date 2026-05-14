@@ -136,7 +136,7 @@ export default function Nav({
                 </li>
                 <li>
                   <Link
-                    href="/services/close-a-company"
+                    href="/services/company-closure"
                     className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
                     onClick={() => {
                       setMenuOpen(false);
@@ -146,6 +146,20 @@ export default function Nav({
                     aria-disabled={isContactModalOpen}
                   >
                     Close a Company
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/payroll-preparation"
+                    className={`block px-4 py-2 text-gray-700${!isContactModalOpen ? " hover:bg-amber-50 hover:text-amber-600" : ""}`}
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setServicesOpen(false);
+                    }}
+                    tabIndex={isContactModalOpen ? -1 : 0}
+                    aria-disabled={isContactModalOpen}
+                  >
+                    Payroll Preparation
                   </Link>
                 </li>
               </motion.ul>

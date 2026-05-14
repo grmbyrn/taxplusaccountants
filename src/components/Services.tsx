@@ -56,21 +56,21 @@ const Services = () => {
             <ServiceCard
               heading="Bookkeeping & Accounts"
               paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
-              href="/services/close-a-company"
+              href="/services/company-closure"
               icon={<BookkeepingAndAccountingIcon />}
             />
             {/* Card 5 */}
             <ServiceCard
               heading="Tax Returns"
               paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
-              href="/services/close-a-company"
+              href="/services/company-closure"
               icon={<TaxReturnsIcon />}
             />
             {/* Card 6 */}
             <ServiceCard
               heading="Payroll/Wages Preparation"
               paragraph="Company strike-off, voluntary liquidation, and winding-up services handled professionally."
-              href="/services/close-a-company"
+              href="/services/company-closure"
               icon={<BookkeepingAndAccountingIcon />}
             />
           </div>

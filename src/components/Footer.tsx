@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Phone } from "lucide-react";
 import { Mail } from "lucide-react";
 import { MapPin } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,10 +20,16 @@ const Footer = () => {
               aria-label="Taxplus Accountants - Home"
               href="/"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy overflow-hidden p-1.5"></div>
-              <span className="text-xl font-semibold text-slate-800">
-                Taxplus Accountants
-              </span>
+              <div className="text-2xl font-bold text-gray-800">
+                  <Image
+                    src="/images/taxplus-accountants-logo.png"
+                    alt="Taxplus Accountants Logo"
+                    width={250}
+                    height={250}
+                    loading="eager"
+                    style={{ width: 'auto' }}
+                  />
+              </div>
             </Link>
             <p className="mt-4 text-sm text-slate-600">
               Professional bookkeeping and accounting services for Irish
@@ -60,22 +67,32 @@ const Footer = () => {
                     href="https://maps.app.goo.gl/xc6PSMC9kpdAeBRq5"
                     target="_blank"
                   >
-                    John St, Lagavooren, Drogheda, Co. Louth, A92 D253, Ireland
+                    Bridge House,
+                    John St,
+                    Drogheda,
+                    Co. Louth
                   </Link>
                 </span>
               </div>
             </address>
+            <div className="mt-6">
+              <p className="text-sm font-medium text-slate-800 mb-2">Opening Hours</p>
+              <ul className="space-y-1 text-sm text-slate-600">
+                <li>Monday – Friday: 9am – 6pm</li>
+                <li>Saturday & Sunday: By appointment</li>
+              </ul>
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:gap-16">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:gap-16">
             <nav aria-label="Services navigation">
               <h2 className="text-sm font-medium text-slate-800">Services</h2>
               <ul className="mt-4 space-y-3">
                 <li>
                   <a
                     className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/bookkeeping-services"
+                    href="/bookkeeping-and-accounts"
                   >
-                    Bookkeeping Services
+                    Bookkeeping & Accounts
                   </a>
                 </li>
                 <li>
@@ -89,26 +106,11 @@ const Footer = () => {
                 <li>
                   <a
                     className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/personal-tax-advisor"
+                    href="/tax-returns"
                   >
-                    Personal Tax Advisor
+                    Tax Returns
                   </a>
                 </li>
-                <li>
-                  <a
-                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/expat-tax-advisor"
-                  >
-                    Expat Tax Advisor
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <nav aria-label="Company formation navigation">
-              <h2 className="text-sm font-medium text-slate-800">
-                Start a Business
-              </h2>
-              <ul className="mt-4 space-y-3">
                 <li>
                   <a
                     className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
@@ -120,7 +122,7 @@ const Footer = () => {
                 <li>
                   <a
                     className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/register-business-name"
+                    href="/services/register-business-name"
                   >
                     Register Business Name
                   </a>
@@ -128,7 +130,7 @@ const Footer = () => {
                 <li>
                   <a
                     className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/close-a-company"
+                    href="/services/company-closure"
                   >
                     Close a Company
                   </a>
@@ -136,17 +138,9 @@ const Footer = () => {
                 <li>
                   <a
                     className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/company-strike-off"
+                    href="/services/payroll-preparation"
                   >
-                    Company Strike-Off
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-sm text-slate-600 hover:text-amber-500 transition-colors"
-                    href="/liquidate-limited-company"
-                  >
-                    Company Liquidation
+                    Payroll Preparation
                   </a>
                 </li>
               </ul>
@@ -218,11 +212,6 @@ const Footer = () => {
           <Link href="https://graemebyrne.com" target="_blank" className="text-amber-600 hover:underline">
             Site by Graeme Byrne
           </Link>
-          <div className="flex items-center gap-4 text-xs text-slate-500">
-            <span>Member: Chartered Accountants Ireland</span>
-            <span aria-hidden="true">•</span>
-            <span>Revenue Authorised Agent</span>
-          </div>
         </div>
       </div>
     </footer>
